@@ -411,3 +411,47 @@ document.addEventListener('DOMContentLoaded', () => {
   if (searchInput) searchInput.addEventListener('input', handleSearch);
   if (searchInputMobile) searchInputMobile.addEventListener('input', handleSearch);
 });
+
+/**
+ * Handles the live kickoff countdown timer calculation
+ */
+function initCountdown() {
+  const countdownEl = document.getElementById('gameCountdown');
+  if (!countdownEl) return;
+
+  const targetDateStr = countdownEl.getAttribute('data-start-date');
+  if (!targetDateStr) return;
+
+  const targetTime = new Date(targetDateStr).getTime();
+  const daysEl = document.getElementById('cd-days');
+  const hoursEl = document.getElementById('cd-hours');
+  const minsEl = document.getElementById('cd-mins');
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = targetTime - now;
+
+    if (distance <= 0) {
+      if (daysEl) daysEl.textContent = '00';
+      if (hoursEl) hoursEl.textContent = '00';
+      if (minsEl) minsEl.textContent = '00';
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+    if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+    if (minsEl) minsEl.textContent = String(mins).padStart(2, '0');
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 60000);
+}
+
+// Attach to DOMContentLoaded alongside existing initializations
+document.addEventListener('DOMContentLoaded', () => {
+  initCountdown();
+});
