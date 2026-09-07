@@ -108,6 +108,10 @@ app.use((err, req, res, next) => {
 
 // --- Server Initialization ---
 
-app.listen(PORT, () => {
-  console.log(`CougarStats MVC Server running on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`CougarStats MVC Server running on http://localhost:${PORT}`);
+  });
+}
+
+export default app;
