@@ -1,6 +1,6 @@
 {
-  "name": "cougarstats",
-  "version": "1.0.0",
+  "name": "cougarconquest",
+  "version": "1.2.0",
   "type": "module",
   "description": "",
   "main": "server.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/itusebastian/cougarstats.git"
+    "url": "git+https://github.com/BYULabs/cougarconquest.git"
   },
   "author": "Sebastián Iturralde",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/itusebastian/cougarstats/issues"
+    "url": "https://github.com/BYULabs/cougarconquest/issues"
   },
-  "homepage": "https://github.com/itusebastian/cougarstats#readme",
+  "homepage": "https://github.com/BYULabs/cougarconquest#readme",
   "dependencies": {
     "axios": "^1.18.1",
     "bcrypt": "^6.0.0",
