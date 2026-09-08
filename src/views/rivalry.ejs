@@ -3,7 +3,7 @@
 <main class="bg-[#001528] text-gray-100 min-h-screen overflow-x-hidden pt-16 sm:pt-20">
 
   <!-- ====== RIVALRY HERO ====== -->
-  <section class="relative overflow-hidden pt-8 sm:pt-16 pb-8">
+  <section class="relative overflow-hidden pt-6 sm:pt-12 pb-8">
     <div class="absolute inset-0 pointer-events-none">
       <div class="absolute top-0 left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-byuRoyal/15 rounded-full blur-3xl"></div>
       <div class="absolute top-10 right-1/4 w-60 sm:w-80 h-60 sm:h-80 bg-red-500/10 rounded-full blur-3xl"></div>
@@ -11,10 +11,14 @@
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Subtitle Badge -->
-      <div class="text-center mb-4 sm:mb-6">
-        <span class="inline-flex items-center gap-1.5 text-amber-400 font-bold text-[10px] sm:text-xs tracking-[0.25em] uppercase bg-white/5 border border-white/10 px-3 py-1 rounded-full">
-          <i class="fas fa-fire text-xs animate-tick"></i> Series History Breakdown
+      <!-- Top Navigation & Badge Row -->
+      <div class="flex items-center justify-between mb-4 sm:mb-6">
+        <a href="/" class="inline-flex items-center gap-2 text-xs font-bold text-gray-400 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 px-3.5 py-1.5 rounded-full transition">
+          <i class="fas fa-arrow-left text-[10px]"></i> Back to Conquest Grid
+        </a>
+        
+        <span class="inline-flex items-center gap-1.5 text-amber-400 font-bold text-[10px] sm:text-xs tracking-[0.2em] uppercase bg-white/5 border border-white/10 px-3 py-1 rounded-full">
+          <i class="fas fa-trophy text-xs"></i> Head-To-Head Record
         </span>
       </div>
 
@@ -24,12 +28,12 @@
         <h1 class="relative text-center text-2xl sm:text-5xl font-black text-white tracking-tight mb-1 uppercase">
           BYU <span class="text-amber-400">vs</span> <%= opponent %>
         </h1>
-        <p class="relative text-center text-gray-400 text-xs sm:text-base mb-6 sm:mb-8">Head-to-Head Rivalry Overview</p>
+        <p class="relative text-center text-gray-400 text-xs sm:text-base mb-6 sm:mb-8">All-Time Conquest History Breakdown</p>
 
         <!-- Teams & Record Bar -->
         <div class="relative grid grid-cols-3 items-center gap-2 sm:gap-6 text-center">
           
-          <!-- BYU (Floating Motion Added) -->
+          <!-- BYU -->
           <div class="flex flex-col items-center min-w-0">
             <div class="animate-float w-16 h-16 sm:w-28 sm:h-28 rounded-full bg-gradient-to-br from-byuRoyal to-byuNavy flex items-center justify-center shadow-xl border-2 sm:border-4 border-white/10 p-2 sm:p-3 transition transform hover:scale-105">
               <img src="<%= byuLogo %>" alt="BYU" class="w-full h-full object-contain">
@@ -41,7 +45,7 @@
           <!-- VS / Overall Record -->
           <div class="flex flex-col items-center justify-center min-w-0">
             <div class="w-9 h-9 sm:w-14 sm:h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-2">
-              <i class="fas fa-trophy text-xs sm:text-xl text-amber-400"></i>
+              <i class="fas fa-swords text-xs sm:text-xl text-amber-400"></i>
             </div>
             
             <div class="flex items-center justify-center gap-1 sm:gap-2 text-base sm:text-3xl font-black">
@@ -59,7 +63,7 @@
             </div>
           </div>
 
-          <!-- Opponent (Floating Motion Added) -->
+          <!-- Opponent -->
           <div class="flex flex-col items-center min-w-0">
             <div class="animate-float w-16 h-16 sm:w-28 sm:h-28 rounded-full bg-white/5 flex items-center justify-center shadow-xl border-2 sm:border-4 border-white/10 p-2 sm:p-3 transition transform hover:scale-105">
               <img src="<%= opponentLogo %>" alt="<%= opponent %>" class="w-full h-full object-contain">
@@ -74,7 +78,7 @@
         <div class="relative mt-6 pt-5 border-t border-white/10 grid grid-cols-3 gap-2 text-center">
           <div class="stat-card bg-white/5 rounded-xl p-2 sm:p-3 border border-white/5">
             <div class="text-lg sm:text-2xl font-black text-white"><%= stats.totalGames %></div>
-            <div class="text-[9px] sm:text-[10px] text-gray-400 uppercase tracking-wide font-semibold">Games</div>
+            <div class="text-[9px] sm:text-[10px] text-gray-400 uppercase tracking-wide font-semibold">Games Played</div>
           </div>
           <div class="stat-card bg-white/5 rounded-xl p-2 sm:p-3 border border-white/5">
             <div class="text-lg sm:text-2xl font-black text-green-400"><%= stats.byuWins %></div>
@@ -82,7 +86,7 @@
           </div>
           <div class="stat-card bg-white/5 rounded-xl p-2 sm:p-3 border border-white/5">
             <div class="text-lg sm:text-2xl font-black text-amber-400"><%= stats.byuAvgPts %></div>
-            <div class="text-[9px] sm:text-[10px] text-gray-400 uppercase tracking-wide font-semibold">BYU Avg Pts</div>
+            <div class="text-[9px] sm:text-[10px] text-gray-400 uppercase tracking-wide font-semibold">Avg BYU Pts</div>
           </div>
         </div>
 
@@ -96,7 +100,7 @@
       
       <div class="text-center mb-6">
         <h2 class="text-xl sm:text-3xl font-black text-white mb-1">Series Breakdown</h2>
-        <p class="text-gray-400 text-xs sm:text-sm">Metrics &amp; scoring totals</p>
+        <p class="text-gray-400 text-xs sm:text-sm">Historical win ratios &amp; scoring totals</p>
       </div>
 
       <div class="grid sm:grid-cols-2 gap-4 sm:gap-6">

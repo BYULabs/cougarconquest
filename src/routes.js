@@ -8,6 +8,6 @@ const router = express.Router();
 // Home Page Route
 router.get('/', getHomePage);
 
-router.get('/rivalry/:opponentId', getRivalryPage);
+router.get('/vs/:opponentId', getRivalryPage);
 
 export default router;
